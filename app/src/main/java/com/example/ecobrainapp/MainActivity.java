@@ -1,12 +1,18 @@
 package com.example.ecobrainapp;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +20,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Solicitar permiso de notificaciones para Android 13+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 101);
+            }
+        }
 
         // Iniciar servicio en segundo plano (EcoTipService)
         Intent serviceIntent = new Intent(this, EcoTipService.class);
@@ -23,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         CardView cardIARiesgos = findViewById(R.id.cardIARiesgos);
         CardView cardMultimedia = findViewById(R.id.cardMultimedia);
         CardView cardWeb = findViewById(R.id.cardWeb);
+        CardView cardServicios = findViewById(R.id.cardServicios);
         CardView cardNoticias = findViewById(R.id.cardNoticias);
         Button btnPerfil = findViewById(R.id.btnPerfil);
         Button btnLogout = findViewById(R.id.btnLogout);
@@ -33,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         cardWeb.setOnClickListener(v -> startActivity(new Intent(this, WebPortalActivity.class)));
         cardNoticias.setOnClickListener(v -> startActivity(new Intent(this, NoticiasActivity.class)));
         btnPerfil.setOnClickListener(v -> startActivity(new Intent(this, PerfilActivity.class)));
+        
+        // Abrir el nuevo módulo de SERVICIOS
+        cardServicios.setOnClickListener(v -> startActivity(new Intent(this, ServiciosActivity.class)));
         
         btnLogout.setOnClickListener(v -> {
             getSharedPreferences("EcoBrainPrefs", MODE_PRIVATE).edit().clear().apply();

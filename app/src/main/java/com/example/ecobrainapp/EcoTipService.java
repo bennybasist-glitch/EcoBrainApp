@@ -1,6 +1,5 @@
 package com.example.ecobrainapp;
 
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
@@ -9,6 +8,7 @@ import android.os.Build;
 import android.os.IBinder;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
+import android.util.Log;
 
 public class EcoTipService extends Service {
 
@@ -16,7 +16,9 @@ public class EcoTipService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d("EcoTipService", "Servicio iniciado, enviando notificación...");
         mostrarNotificacion("Consejo Eco-Brain", "¡Recuerda apagar los equipos electrónicos para reducir tu huella digital!");
+        mostrarNotificacionUbicacion("Ubicación SEMARNAT", "Central: Av. Ejercito Nacional 223, Col. Anáhuac, CDMX.");
         return START_NOT_STICKY;
     }
 
@@ -27,8 +29,9 @@ public class EcoTipService extends Service {
             NotificationChannel channel = new NotificationChannel(
                     CHANNEL_ID,
                     "Eco Tips",
-                    NotificationManager.IMPORTANCE_DEFAULT
+                    NotificationManager.IMPORTANCE_HIGH // IMPORTANCIA ALTA para que suene y aparezca arriba
             );
+            channel.setDescription("Canal para consejos de reciclaje e IA");
             if (manager != null) {
                 manager.createNotificationChannel(channel);
             }
@@ -38,10 +41,26 @@ public class EcoTipService extends Service {
                 .setSmallIcon(android.R.drawable.ic_dialog_info)
                 .setContentTitle(titulo)
                 .setContentText(mensaje)
+                .setPriority(NotificationCompat.PRIORITY_HIGH) // Prioridad alta para Android antiguo
+                .setDefaults(NotificationCompat.DEFAULT_ALL)   // Sonido y vibración por defecto
                 .setAutoCancel(true);
 
         if (manager != null) {
             manager.notify(101, builder.build());
+        }
+    }
+
+    private void mostrarNotificacionUbicacion(String titulo, String mensaje) {
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(android.R.drawable.ic_dialog_map)
+                .setContentTitle(titulo)
+                .setContentText(mensaje)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setAutoCancel(true);
+
+        if (manager != null) {
+            manager.notify(102, builder.build()); // ID diferente para que no se sobreescriban
         }
     }
 

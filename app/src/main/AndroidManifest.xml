@@ -65,6 +65,11 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
 
+        <activity
+            android:name=".ServiciosActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <!-- Servicio en Segundo Plano para Notificaciones y Tips -->
         <service
             android:name=".EcoTipService"
