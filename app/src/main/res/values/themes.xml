@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EcoBrainApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colores Principales -->
+        <item name="colorPrimary">@color/cyan_neon</item>
+        <item name="colorOnPrimary">@color/background_dark</item>
+        <item name="colorPrimaryContainer">@color/emerald_deep</item>
+
+        <!-- Colores Secundarios -->
+        <item name="colorSecondary">@color/lime_bright</item>
+
+        <!-- Fondos y Superficies -->
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/card_bg_dark</item>
+
+        <!-- Tipografía y Estados -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <style name="Theme.EcoBrainApp" parent="Base.Theme.EcoBrainApp" />
+
+    <!-- Estilo para CardViews Tecnológicos -->
+    <style name="EcoBrainCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/card_bg_dark</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">6dp</item>
+    </style>
+</resources>

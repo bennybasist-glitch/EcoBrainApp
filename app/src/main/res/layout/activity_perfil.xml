@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_eco_brain"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MI PERFIL"
+        android:textColor="@color/cyan_neon"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/img_perfil_eco" />
+
+    <androidx.cardview.widget.CardView
+        style="@style/EcoBrainCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/glow_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvPerfilNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre Usuario"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPerfilCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="usuario@ecobrain.com"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/cyan_neon" />
+
+            <TextView
+                android:id="@+id/tvPuntosTotales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 Puntos"
+                android:textColor="@color/cyan_neon"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRecompensa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Próximo premio: ¡Desayuno!"
+                android:textColor="@color/lime_bright"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="© 2024 EcoBrain IA - Derechos Reservados"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:alpha="0.7"/>
+
+</LinearLayout>

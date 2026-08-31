@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- EcoBrain IA Global Palette -->
+    <color name="emerald_deep">#064420</color>
+    <color name="emerald_medium">#1B5E20</color>
+    <color name="lime_bright">#C0CA33</color>
+    <color name="cyan_neon">#00E5FF</color>
+    <color name="cyan_glow">#4000E5FF</color>
+    <color name="copper_subtle">#B87333</color>
+    <color name="background_dark">#0A1929</color> <!-- Fondo tecnológico oscuro -->
+    <color name="card_bg_dark">#132F4C</color>
+    <color name="text_secondary">#B2BAC2</color>
+</resources>

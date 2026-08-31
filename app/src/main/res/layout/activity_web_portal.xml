@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_eco_brain"
+    android:orientation="vertical">
+
+    <!-- Header Tecnológico -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/emerald_deep"
+        android:padding="12dp"
+        android:text="CENTRO DE DATOS AMBIENTALES"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:letterSpacing="0.1" />
+
+    <!-- Carrusel de Portales (Selector de Fuentes) -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Portal SEDEMA -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnPortalSedema"
+                style="@style/EcoBrainCard"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/glow_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SEDEMA CDMX"
+                        android:textColor="@color/cyan_neon"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Portal Oficial"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Portal SEMARNAT -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnPortalSemarnat"
+                style="@style/EcoBrainCard"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/glow_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SEMARNAT"
+                        android:textColor="@color/lime_bright"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Informe 2018"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Portal SMA EDOMEX -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnPortalEdomex"
+                style="@style/EcoBrainCard"
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_margin="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/glow_border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SMA EDOMEX"
+                        android:textColor="@color/cyan_neon"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ambiente Estatal"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Indicador de Carga / Vista Previa -->
+    <ProgressBar
+        android:id="@+id/progressBarWeb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:progressTint="@color/cyan_neon"
+        android:visibility="gone"/>
+
+    <!-- Navegador de Datos -->
+    <WebView
+        android:id="@+id/webViewEco"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="8dp"
+        android:background="@color/card_bg_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:text="© 2024 EcoBrain IA - Derechos Reservados"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:alpha="0.7"/>
+
+</LinearLayout>

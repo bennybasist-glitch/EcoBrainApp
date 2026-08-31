@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_eco_brain"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Consulta al Cerebro!"
+        android:textColor="@color/lime_bright"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="La IA clasificará el residuo para su reciclaje."
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchResiduo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/glow_border"
+        android:theme="@style/Theme.AppCompat"
+        app:iconifiedByDefault="false"
+        app:queryHint="Ej. Botella, papel, lata..."
+        app:queryBackground="@android:color/transparent" />
+
+    <ListView
+        android:id="@+id/listSugerencias"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/card_bg_dark"
+        android:divider="@color/emerald_deep"
+        android:dividerHeight="1dp"
+        android:visibility="gone" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardResultado"
+        style="@style/EcoBrainCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/glow_border"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvObjeto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Residuo"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Contenedor"
+                android:textColor="@color/cyan_neon"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvInstruccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Instrucción"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvPuntosGanados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="⭐ +10 Eco-Puntos"
+                android:textColor="@color/lime_bright"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="© 2024 EcoBrain IA - Derechos Reservados"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:alpha="0.7"/>
+
+</LinearLayout>
